@@ -5,17 +5,23 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon --exec babel-node -- lib/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test PORT=3001 mocha tests/**/* --require setup/babel-polyfill.js --exit"
   },
   "author": "Bryan Mytko",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.0.0-beta.44",
     "@babel/core": "^7.0.0-beta.44",
     "@babel/node": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "@babel/register": "^7.0.0-beta.44",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "express": "^4.16.3"
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
     "mocha": "^5.0.5"
   }
 }
